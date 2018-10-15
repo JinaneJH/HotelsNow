@@ -40,15 +40,13 @@ def main():
 
     ListsOfnames, ListsOfdates, ListsOfrates, ListsOfreviews  =  parser.scrape_reviews() # create reviews_hotels.csv
 
-#reviews_hotels_df
-
     names_sn, rates_sn,  dates_sn, rank_sn, reviews_sn, tripadv_sn = hotels_sort(ListsOfrates, ListsOfnames, ListsOfReviews, ListsOfdates)
     
-    for ndx in range(0,len(names_sn)):
+   # for ndx in range(0,len(names_sn)):
         
-        keyp_list, keyn_list = hotel_sentiment(reviews_sn[ndx])
-        
-        plot_sentiments(keyp_list,keyn_list, ndx)
+    keyp_list, keyn_list = hotel_sentiment(reviews_sn[ndx])
+    print "Reviews' Sentiments for" + names_sn[0]+", the top hotel "
+    plot_sentiments(keyp_list[0],keyn_list[0])
         
 
 
