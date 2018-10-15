@@ -125,7 +125,7 @@ def get_hotels_top_ten(hotel_names, hotel_ranks):
     window = Tk()
     window.geometry('500x500')
     
-    window.title("HotelsNow")
+    window.title("HotelsNow, Top 10 Hotels")
     
     color= ['medium blue', 'blue2', 'blue',  'RoyalBlue3','RoyalBlue2','RoyalBlue1',   'DodgerBlue3','DodgerBlue2',   'SteelBlue3','SteelBlue2']
 #        'SteelBlue1',  'SkyBlue3',  'SkyBlue2',  'SkyBlue1',  'LightSkyBlue2','LightSkyBlue1', 'SlateGray2', 'SlateGray1', 'LightSteelBlue2','LightSteelBlue1',  'LightBlue2', 
