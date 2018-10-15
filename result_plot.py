@@ -120,49 +120,21 @@ def plot_sentiments(keyp_list, keyn_list, sort):
     
         
     
-def get_hotels_list(hotel_names, hotel_ranks):
+def get_hotels_top_ten(hotel_names, hotel_ranks):
     
     window = Tk()
     window.geometry('500x700')
     
     window.title("HotelsNow")
     
-    color= ['medium blue', 'blue2', 'blue',  'RoyalBlue3','RoyalBlue2','RoyalBlue1',   'DodgerBlue3','DodgerBlue2',   'SteelBlue3','SteelBlue2',  
-        'SteelBlue1',  'SkyBlue3',  'SkyBlue2',  'SkyBlue1',  'LightSkyBlue2','LightSkyBlue1', 'SlateGray2', 'SlateGray1', 'LightSteelBlue2','LightSteelBlue1',  'LightBlue2', 
-        'LightBlue1']
+    color= ['medium blue', 'blue2', 'blue',  'RoyalBlue3','RoyalBlue2','RoyalBlue1',   'DodgerBlue3','DodgerBlue2',   'SteelBlue3','SteelBlue2']
+#        'SteelBlue1',  'SkyBlue3',  'SkyBlue2',  'SkyBlue1',  'LightSkyBlue2','LightSkyBlue1', 'SlateGray2', 'SlateGray1', 'LightSteelBlue2','LightSteelBlue1',  'LightBlue2', 
+#        'LightBlue1']
     
-    for ndx in range(0,22):
+    
+    for ndx in range(0,10):
         row = Frame(window)
         row.pack(side=TOP, fill=X, padx=5, pady=5)
         lab=Label(row, width=30, text = hotel_names[ndx]+ str(hotel_rank[ndx]),  fg="white", background=color[ndx], font="ariel",anchor='w')#.grid(row=y, column=0, columnspan=3,sticky=W)
         lab.pack(side=LEFT)
 
-#if  __name__ == '__main__':
-    
-    
-
-#with open('hotels_name.txt', 'w') as f:
-#    for item in names_sn:
-#        f.write("%s\n" % item)  
-#        
-#        
-#with open('hotels_name.txt') as f:
-#    lines = f.read().splitlines()
-#    
-#
-#
-#def plot_bar_x():
-#    # this is for plotting purpose
-#    index = np.arange(len(names_sn))
-#    plt.bar(index, rank_sn)
-#    plt.xlabel('Hotels', fontsize=5)
-#    plt.ylabel('Rank', fontsize=5)
-#    plt.xticks(index, names_sn, fontsize=5, rotation=30)
-#    plt.title('Hotels bar chart')
-#    plt.show()
-#
-#
-#plt.figure()
-#plt.hist(rank_sn,20)
-#plt.xlabel('Percentile rank of rate 4', fontsize=14)     
-#plt.ylabel('Counts', fontsize=14)
