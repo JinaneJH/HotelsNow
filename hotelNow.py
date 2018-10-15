@@ -43,11 +43,14 @@ def main():
     names_sn, rates_sn,  dates_sn, rank_sn, reviews_sn, tripadv_sn = hotels_sort(ListsOfrates, ListsOfnames, ListsOfReviews, ListsOfdates)
     
    # for ndx in range(0,len(names_sn)):
+   
+    print "List of the top 10 hotels"   
+    get_hotels_top_ten(hotel_names, hotel_ranks)
         
     keyp_list, keyn_list = hotel_sentiment(reviews_sn[ndx])
     print "Reviews' Sentiments for" + names_sn[0]+", the top hotel "
     plot_sentiments(keyp_list[0],keyn_list[0])
-        
+
 
 
 
