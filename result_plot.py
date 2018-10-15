@@ -13,7 +13,7 @@ mpl.rcParams['font.size'] = 14
 import matplotlib.pyplot as plt
    
 
-def plot_sentiments(keyp_list, keyn_list, sort):
+def plot_sentiments(keyp_list, keyn_list):
     
         
         ''' pie charts '''
@@ -123,7 +123,7 @@ def plot_sentiments(keyp_list, keyn_list, sort):
 def get_hotels_top_ten(hotel_names, hotel_ranks):
     
     window = Tk()
-    window.geometry('500x700')
+    window.geometry('500x500')
     
     window.title("HotelsNow")
     
