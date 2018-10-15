@@ -23,7 +23,7 @@ def main():
     checkout_date = raw_input('What about your check-out date?')
     T=1
     while T:
-        sort = raw_input('Do you want the most popular or the most economic hotels? choose p for popularity and c for most economic')
+        sort = raw_input('Do you want the most popular or the most economic hotels? choose p for most popular and c for most economic')
         if sort == p:
             option = 'popularity' 
             T=0
@@ -31,8 +31,9 @@ def main():
             option ='priceLow'  
             T=0
         else: 
-            input('Please choose p for popularity and c for less costly!')
+            input('Please choose p for most popular and c for lowest price!')
             continue
+            
     """ generate a csv file with hotels urls and other info """    
     scrapy.main(locality, checkin_date, checkout_date, option) 
 
