@@ -6,10 +6,9 @@ Created on Tue Sep 25 14:25:00 2018
 @author: sdic_lab
 """
 
-#  python tripadvisor_scraper.py "2018/10/01" "2018/11/12" "popularity" "boston"
+#  python tripadvisor_scraper.py "2018/10/01" "2018/11/12" "popularity" "boston" GENERATEs the file 'tripadvisor_data.csv'
 
 
-import urllib
 import urllib2
 import sys
 import re
@@ -57,23 +56,23 @@ def month_string_to_number(string):
         raise ValueError('Not a month')
 
 
-def scrape_reviews():
+def scrape_reviews(Nb_months):
     
     
     now = datetime.now()   
     dtc= date(now.year,now.month,now.day)    
-        
+    Nb_days = Nb_months*30    
     df_hotels = pd.read_csv('tripadvisor_data.csv')
     option = webdriver.ChromeOptions()
     path_chrome = "/Users/sdic_lab/Documents/project/myproject/chromedriver"
     browser = webdriver.Chrome(executable_path=path_chrome, chrome_options=option)  
-    browser.implicitly_wait(0)
+    
     ListsOfreviews=[]
     ListsOfdates=[]
     ListsOfrates=[]
     for index, row in df_hotels.iterrows():
            
-            print 'Extracting reviews from'+ row['hotel_name']
+            print 'Extracting reviews for'+ row['hotel_name']
             list_date = []
             list_rate = []
             list_review = []
@@ -131,7 +130,7 @@ def scrape_reviews():
                      full_review = browser.find_element_by_xpath('(//*[@id="'+ str(review_id) + '"]//p)[1]')
                      time.sleep(2)
                      text_review.append(full_review.text)
-                     print(full_review.text)
+                     
                     
             '''select the most recent reviews '''
             for ndx, date0 in enumerate(date_review):
@@ -151,7 +150,7 @@ def scrape_reviews():
                     day = int(re.search('(.+?),', day).group(1))
                     year = int(dt.split()[2])
                     dt0= date(year,month,day)
-                    if diff_dates(dt0, dtc) < 1080:
+                    if diff_dates(dt0, dtc) < Nb_days:
                         list_date.append(dt0)
                         list_review.append(text_review[ndx])
                         list_rate.append(rates[ndx])
@@ -237,7 +236,7 @@ def scrape_reviews():
                         day = int(re.search('(.+?),', day).group(1))
                         year = int(dt.split()[2])
                         dt0= date(year,month,day)
-                        if diff_dates(dt0, dtc) < 1080:
+                        if diff_dates(dt0, dtc) < Nb_days:
     
                             list_date.append(dt0)
                             list_review.append(text_review[ndx])
@@ -245,7 +244,7 @@ def scrape_reviews():
                             
                         else: 
                             T= 0
-               #except:
+              
                             break
                         
                         
@@ -255,8 +254,7 @@ def scrape_reviews():
      
     ListOfnames=[]
     for index, row in df_hotels.iterrows():
-        
-        #if index<3:
+       
             ListOfnames.append(row['hotel_name'])
            
     reviews_hotels_df = pd.DataFrame({'Name': ListOfnames, 'Date' :ListsOfdates, 'Rate': ListsOfrates, 'Reviews': ListsOfreviews})        
