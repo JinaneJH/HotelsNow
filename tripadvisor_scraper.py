@@ -131,7 +131,7 @@ if __name__ == '__main__':
     if today<datetime.strptime(checkIn,"%Y/%m/%d") and datetime.strptime(checkIn,"%Y/%m/%d")<datetime.strptime(checkOut,"%Y/%m/%d"):
         data = parse(locality,checkin_date,checkout_date,sort)
         print "Writing to output file tripadvisor_data.csv"
-        with open('tripadvisor_data.csv','w')as csvfile:
+        with open(locality+'_tripadvisor_data.csv','w')as csvfile:
             fieldnames = ['hotel_name','url','locality','reviews','tripadvisor_rating','checkIn','checkOut','price_per_night','booking_provider','no_of_deals','hotel_features']
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
             writer.writeheader()
