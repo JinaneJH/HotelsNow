@@ -18,16 +18,16 @@ from result_plot import *
 
 def main():
     
-    locality = raw_input('Tell me what is your destination city ?')
-    checkin_date = raw_input('And your check-in date')
-    checkout_date = raw_input('What about your check-out date?')
+    locality = raw_input('Tell me what is your destination city ?  ')
+    checkin_date = raw_input('And your check-in date (Format: YYYY/MM/DD) ?  ')
+    checkout_date = raw_input('What about your check-out date (Format: YYYY/MM/DD) ?  ')
     T=1
     while T:
         sort = raw_input('Do you want the most popular or the most economic hotels? choose p for most popular and c for most economic')
-        if sort == p:
+        if sort == "p":
             option = 'popularity' 
             T=0
-        elif sort == c:
+        elif sort == "c":
             option ='priceLow'  
             T=0
         else: 
