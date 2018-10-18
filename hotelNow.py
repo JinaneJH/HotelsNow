@@ -41,7 +41,7 @@ def main():
 
     ListOfnames, ListsOfdates, ListsOfrates, ListsOfreviews  =  parser.scrape_reviews(reviews_timeframe,locality) # create reviews_hotels.csv
 
-    names_sn, rates_sn,  dates_sn, rank_sn, reviews_sn, tripadv_sn = hotels_sort(ListsOfrates, ListOfnames, ListsOfReviews, ListsOfdates)
+    names_sn, rates_sn,  dates_sn, rank_sn, reviews_sn, tripadv_sn = hotels_sort(ListsOfrates, ListOfnames, ListsOfReviews, ListsOfdates,locality)
     
    # for ndx in range(0,len(names_sn)):
    
