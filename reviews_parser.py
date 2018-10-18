@@ -6,8 +6,10 @@ Created on Tue Sep 25 14:25:00 2018
 @author: sdic_lab
 """
 
-#  python tripadvisor_scraper.py "2018/10/01" "2018/11/12" "popularity" "boston" GENERATEs the file 'tripadvisor_data.csv'
+#  python tripadvisor_scraper.py "2018/10/01" "2018/11/12" "popularity" "boston" GENERATE the file 'tripadvisor_data.csv'
 
+#  The function scrape_reviews(Nb_months) read the url links of hotels from the file 'tripadvisor_data.csv' and extract the reviews
+#  of each hotel, but those corresponding to the last Nb_months months
 
 import urllib2
 import sys
