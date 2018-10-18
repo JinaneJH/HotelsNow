@@ -50,8 +50,9 @@ def chi2_compute(rate_l1,rate_l2):
     return p
 
     
-def hotels_sort(ListsOfrates, ListsOfnames, ListsOfReviews, ListsOfdates):
+def hotels_sort(ListsOfrates, ListOfnames, ListsOfReviews, ListsOfdates):
     
+    """ Sort the hotels based on the percentile ran of 4 and chi2 statistic """
     df_hotels = pd.read_csv('tripadvisor_data.csv')
     N = len(df_hotels)
 
@@ -67,7 +68,7 @@ def hotels_sort(ListsOfrates, ListsOfnames, ListsOfReviews, ListsOfdates):
     
     I= np.argsort(rank)    
     
-    names = [ListsOfnames[i] for i in I]
+    names = [ListOfnames[i] for i in I]
     reviews = [ListsOfReviews[i] for i in I]  
     dates = [ListsOfdates[i] for i in I]  
     rates = [ratesnew[i] for i in I]
@@ -144,6 +145,7 @@ def hotels_sort(ListsOfrates, ListsOfnames, ListsOfReviews, ListsOfdates):
 
 def hotel_sentiment(reviews_hotel,threshold):
     
+    """ Extract sentiments of features of a hotel using its text reviews; threshold serves to classify positive and negative statements """
     text =  ''.join(reviews_hotel)
     
     
