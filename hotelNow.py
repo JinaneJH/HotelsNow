@@ -21,7 +21,7 @@ def main():
     locality = raw_input('Tell me what is your destination city ?  ')
     checkin_date = raw_input('And your check-in date (Format: YYYY/MM/DD) ?  ')
     checkout_date = raw_input('What about your check-out date (Format: YYYY/MM/DD) ?  ')
-    reviews_timframe = raw_input("What is your timeframe for reviews (in number of months) ? ")
+    reviews_timeframe = raw_input("What is your timeframe for reviews (in number of months) ? ")
     T=1
     while T:
         sort = raw_input('Do you want the most popular or the most economic hotels? choose p for most popular and c for most economic')
