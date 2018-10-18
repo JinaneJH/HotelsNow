@@ -50,10 +50,10 @@ def chi2_compute(rate_l1,rate_l2):
     return p
 
     
-def hotels_sort(ListsOfrates, ListOfnames, ListsOfReviews, ListsOfdates):
+def hotels_sort(ListsOfrates, ListOfnames, ListsOfReviews, ListsOfdates,locality):
     
     """ Sort the hotels based on the percentile ran of 4 and chi2 statistic """
-    df_hotels = pd.read_csv('tripadvisor_data.csv')
+    df_hotels = pd.read_csv(locality+'_tripadvisor_data.csv')
     N = len(df_hotels)
 
     tripadv_rates= df_hotels['tripadvisor_rating']
