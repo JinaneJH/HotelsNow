@@ -58,13 +58,13 @@ def month_string_to_number(string):
         raise ValueError('Not a month')
 
 
-def scrape_reviews(Nb_months):
+def scrape_reviews(Nb_months,locality):
     
     
     now = datetime.now()   
     dtc= date(now.year,now.month,now.day)    
     Nb_days = Nb_months*30    
-    df_hotels = pd.read_csv('tripadvisor_data.csv')
+    df_hotels = pd.read_csv(locality+'_tripadvisor_data.csv')
     option = webdriver.ChromeOptions()
     path_chrome = "/Users/sdic_lab/Documents/project/myproject/chromedriver"
     browser = webdriver.Chrome(executable_path=path_chrome, chrome_options=option)  
@@ -74,7 +74,7 @@ def scrape_reviews(Nb_months):
     ListsOfrates=[]
     for index, row in df_hotels.iterrows():
            
-            print 'Extracting reviews for'+ row['hotel_name']
+            print 'Extracting reviews for '+ row['hotel_name']
             list_date = []
             list_rate = []
             list_review = []
@@ -261,7 +261,7 @@ def scrape_reviews(Nb_months):
            
     reviews_hotels_df = pd.DataFrame({'Name': ListOfnames, 'Date' :ListsOfdates, 'Rate': ListsOfrates, 'Reviews': ListsOfreviews})        
             
-    reviews_hotels_df.to_csv('reviews_hotels.csv')
+    reviews_hotels_df.to_csv(locality+'_reviews_hotels.csv')
 
     return ListOfnames, ListsOfdates, ListsOfrates, ListsOfreviews 
 
