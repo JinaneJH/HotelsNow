@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+
 from datetime import datetime
 from time import time
 from lxml import html,etree
@@ -8,6 +8,9 @@ import unicodecsv as csv
 import argparse
 
 def parse(locality,checkin_date,checkout_date,sort):
+    
+    """ renders the list of top hotels provided by TripAdvisor (hotels listed on the first page)    """
+    
     checkIn = checkin_date.strftime("%Y/%m/%d")
     checkOut = checkout_date.strftime("%Y/%m/%d")
     print "Scraper Inititated for Locality:%s"%locality
