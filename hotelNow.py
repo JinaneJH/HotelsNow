@@ -39,7 +39,7 @@ def main():
     scrapy.main(locality, checkin_date, checkout_date, option) 
 
 
-    ListOfnames, ListsOfdates, ListsOfrates, ListsOfreviews  =  parser.scrape_reviews(reviews_timeframe) # create reviews_hotels.csv
+    ListOfnames, ListsOfdates, ListsOfrates, ListsOfreviews  =  parser.scrape_reviews(reviews_timeframe,locality) # create reviews_hotels.csv
 
     names_sn, rates_sn,  dates_sn, rank_sn, reviews_sn, tripadv_sn = hotels_sort(ListsOfrates, ListOfnames, ListsOfReviews, ListsOfdates)
     
