@@ -263,7 +263,7 @@ def scrape_reviews(Nb_months):
             
     reviews_hotels_df.to_csv('reviews_hotels.csv')
 
-    return ListsOfnames, ListsOfdates, ListsOfrates, ListsOfreviews 
+    return ListOfnames, ListsOfdates, ListsOfrates, ListsOfreviews 
 
 
     
