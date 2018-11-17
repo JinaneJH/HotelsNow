@@ -47,7 +47,7 @@ def main():
     print "List of the top 10 hotels"   
     get_hotels_top_ten(hotel_names, hotel_ranks)
         
-    keyp_list, keyn_list = hotel_sentiment(reviews_sn[ndx])
+    keyp_list, keyn_list = hotel_sentiment(reviews_sn[ndx], 0.2)
     print "Reviews' Sentiments for" + names_sn[0]+", the top hotel "
     plot_sentiments(keyp_list[0],keyn_list[0])
 
