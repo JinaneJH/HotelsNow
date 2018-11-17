@@ -3,7 +3,7 @@
 """
 Created on Mon Oct  8 14:19:19 2018
 
-@author: sdic_lab
+@author: jharmouche
 """
 
 
@@ -24,26 +24,25 @@ def main():
     reviews_timeframe = raw_input("What is your timeframe for reviews (in number of months) ? ")
     T=1
     while T:
-        sort = raw_input('Do you want the most popular or the most economic hotels? choose p for most popular and c for most economic')
+        sort = raw_input('Do you want the most popular or the most economic hotels? choose p for most popular and e for most economic')
         if sort == "p":
             option = 'popularity' 
             T=0
-        elif sort == "c":
+        elif sort == "e":
             option ='priceLow'  
             T=0
         else: 
-            input('Please choose p for most popular and c for lowest price!')
+            input('Please choose p for most popular and e for lowest price!')
             continue
             
     """ generate a csv file with hotels urls and other info """    
+    
     scrapy.main(locality, checkin_date, checkout_date, option) 
 
 
     ListOfnames, ListsOfdates, ListsOfrates, ListsOfreviews  =  parser.scrape_reviews(reviews_timeframe,locality) # create reviews_hotels.csv
 
     names_sn, rates_sn,  dates_sn, rank_sn, reviews_sn, tripadv_sn = hotels_sort(ListsOfrates, ListOfnames, ListsOfReviews, ListsOfdates,locality)
-    
-   # for ndx in range(0,len(names_sn)):
    
     print "List of the top 10 hotels"   
     get_hotels_top_ten(hotel_names, hotel_ranks)
