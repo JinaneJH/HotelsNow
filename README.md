@@ -15,3 +15,8 @@ Corresponding slides can be found here https://www.slideshare.net/secret/ctrHCgA
 
 
 You will need to change the path of chromedriver.exe in reviews_parser.py
+
+
+
+Run the script by typing hotelNow.main() in the Console window
+
