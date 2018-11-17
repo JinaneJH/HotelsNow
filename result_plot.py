@@ -102,7 +102,7 @@ def plot_sentiments(keyp_list, keyn_list):
             explode = (0.1, 0)
             plt.subplot(1,4,1)
             patches, texts =  plt.pie(sizes, explode=explode,  colors=colors, shadow = True, startangle=90)  
-            if T == 0
+            if T == 0:
                 plt.legend(patches, labels, loc="best")
                 T=1
         
