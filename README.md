@@ -14,9 +14,4 @@ Corresponding slides can be found here https://www.slideshare.net/secret/ctrHCgA
 
 
 
-You will need to have been installed the following:
-
-selenium 
-gensim
-textblob
-Chromedriver
+You will need to change the path of chromedriver.exe in reviews_parser.py
