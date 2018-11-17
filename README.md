@@ -10,3 +10,7 @@ You can use this repository to do the following tasks :
 
 4- Analyze the reviews's texts for each hotel, extract the polarity scores for the hotel features, such as location, service, etc. 
 
+Corresponding slides can be found here https://www.slideshare.net/secret/ctrHCgAnwfdNP
+
+
+
