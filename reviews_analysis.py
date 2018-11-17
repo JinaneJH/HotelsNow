@@ -145,7 +145,7 @@ def hotels_sort(ListsOfrates, ListOfnames, ListsOfreviews, ListsOfdates,locality
 
 def hotel_sentiment(reviews_hotel,threshold):
     
-    """ Extract sentiments of features of a hotel using its text reviews; threshold serves to classify positive and negative statements """
+    """ Extract sentiments of features of a hotel using reviews texts; threshold serves to classify positive and negative statements """
     text =  ''.join(reviews_hotel)
     
     
